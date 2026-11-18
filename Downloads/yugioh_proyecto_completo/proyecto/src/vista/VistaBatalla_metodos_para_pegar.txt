@@ -1,0 +1,70 @@
+// Pegar DENTRO de la clase VistaBatalla (JFrame Form), DESPUÉS de los bloques azules
+// generados por NetBeans. Solo leen/escriben componentes: cero lógica de negocio.
+// Los nombres de variable deben coincidir con los que pongas en el diseñador
+// (clic derecho > Change Variable Name).
+
+// ---- Jugadores ----
+public String getNombreJ1()  { return txtNombreJ1.getText(); }
+public String getNombreJ2()  { return txtNombreJ2.getText(); }
+public String getLpInicial() { return txtLpInicial.getText(); }
+
+// ---- Monstruo ----
+public int getIndiceJugadorInvocador() { return cmbJugador.getSelectedIndex(); }   // 0 = J1, 1 = J2
+public String getNombreMonstruo()      { return txtNombreMonstruo.getText(); }
+public String getAtq()                 { return txtAtq.getText(); }
+public String getDef()                 { return txtDef.getText(); }
+public int getIndicePosicion()         { return cmbPosicion.getSelectedIndex(); }  // 0 = Ataque, 1 = Defensa
+public String getEfecto()              { return txtEfecto.getText(); }
+
+public void limpiarFormularioMonstruo() {
+    txtNombreMonstruo.setText("");
+    txtAtq.setText("");
+    txtDef.setText("");
+    txtEfecto.setText("");
+    txtNombreMonstruo.requestFocus();
+}
+
+// ---- Batalla ----
+public int getIndiceAtacante() { return cmbAtacante.getSelectedIndex(); }          // 0 = J1 ataca, 1 = J2 ataca
+
+public int getIndiceSeleccionado(int jugador) {
+    return (jugador == 0) ? listCampoJ1.getSelectedIndex() : listCampoJ2.getSelectedIndex();
+}
+
+public void setNombre(int jugador, String nombre) {
+    (jugador == 0 ? lblNombreJ1 : lblNombreJ2).setText(nombre);
+}
+
+public void setLp(int jugador, int lp) {
+    (jugador == 0 ? lblLpJ1 : lblLpJ2).setText("LP: " + lp);
+}
+
+public void setCampo(int jugador, java.util.List<String> items) {
+    javax.swing.DefaultListModel<String> modelo = new javax.swing.DefaultListModel<>();
+    for (String s : items) {
+        modelo.addElement(s);
+    }
+    (jugador == 0 ? listCampoJ1 : listCampoJ2).setModel(modelo);
+}
+
+public void agregarHistorial(String linea) { txtaHistorial.append(linea + "\n"); }
+
+public void setBatallaHabilitada(boolean habilitada) {
+    btnInvocar.setEnabled(habilitada);
+    btnAtacar.setEnabled(habilitada);
+    btnAtaqueDirecto.setEnabled(habilitada);
+}
+
+public void mostrarError(String mensaje) {
+    javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+}
+
+public void mostrarMensaje(String mensaje) {
+    javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Duelo", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+}
+
+// ---- Registro de listeners (el Controlador los llama) ----
+public void addCrearJugadoresListener(java.awt.event.ActionListener l) { btnCrearJugadores.addActionListener(l); }
+public void addInvocarListener(java.awt.event.ActionListener l)        { btnInvocar.addActionListener(l); }
+public void addAtacarListener(java.awt.event.ActionListener l)         { btnAtacar.addActionListener(l); }
+public void addAtaqueDirectoListener(java.awt.event.ActionListener l)  { btnAtaqueDirecto.addActionListener(l); }

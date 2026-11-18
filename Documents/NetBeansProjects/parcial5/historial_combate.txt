@@ -1,0 +1,5 @@
+[2026-11-18 11:51:01] Atacante: Dragon | Defensor: Mago Oscuro | Daño: 500 | Resultado: Defensor destruido; el defensor pierde 500 LP
+[2026-11-18 11:53:51] Atacante: Mago Oscuro | Defensor: dragon | Daño: 500 | Resultado: Atacante destruido; el atacante pierde 500 LP
+[2026-11-18 11:54:01] Atacante: dragon | Defensor: Ataque directo | Daño: 3000 | Resultado: Ataque directo; el defensor pierde 3000 LP
+[2026-11-18 11:54:20] Atacante: dragon | Defensor: Ataque directo | Daño: 3000 | Resultado: Ataque directo; el defensor pierde 3000 LP
+[2026-11-18 11:54:24] Atacante: dragon | Defensor: Ataque directo | Daño: 3000 | Resultado: Ataque directo; el defensor pierde 3000 LP
